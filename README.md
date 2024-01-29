@@ -2,7 +2,11 @@
 
 You may want to run a large language model locally on your machine for many reasons. I engaged in this endeavor to gain a deeper understanding of Large Language Models (LLMs), exploring how to fine-tune and train them.
 
-I experimented with Small LLMs and Retrieval-Augmented Generation (RAG) chain that operates locally on my machine, leveraging the computing power of the CPU. The essential components I incorporated to construct and execute the LLMs model and RAG chain locally include:
+I experimented with Small LLMs and Retrieval-Augmented Generation (RAG) chain that operates locally on my machine, leveraging the computing power of the CPU. 
+
+In the architecture of this Chatbot design, you have the flexibility to input any website URL along with a question, and the system will provide an answer. The initial phase involves downloading the content of the web page, transforming it into a vector using the Mistral Embedding model, and subsequently storing it in the Chroma Vector DB. The same process is applied to questions, converting them into embeddings. A semantic search is then conducted in the Chroma Vector DB, and the context along with the question is passed to the Mistral Large Language Model (LLM). Mistral LLM, in turn, generates well-formatted responses, which are displayed on the Chatbot UI.
+
+The essential components I incorporated to construct and execute the LLMs model and RAG chain locally include:
 
 1. Ollama Python library: Employed for local model execution.
 2. Gradio Python library: Utilized for creating a chatbot interface.
